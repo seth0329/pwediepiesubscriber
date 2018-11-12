@@ -1,5 +1,4 @@
 import gamelib
-import time
 import random
 import math
 import warnings
@@ -43,7 +42,6 @@ class AlgoStrategy(gamelib.AlgoCore):
 
 
     def on_turn(self, turn_state):
-        start_of_turn = time.time()
         """
         This function is called every turn with the game state wrapper as
         an argument. The wrapper stores the state of the arena and has methods
@@ -58,9 +56,6 @@ class AlgoStrategy(gamelib.AlgoCore):
         self.filterstrategy(game_state)
 
         game_state.submit_turn()
-        end_of_turn = time.time()
-        totaltime = (end_of_turn - start_of_turn)
-        gamelib.util.debug_write(totaltime)
 
     """
     NOTE: All the methods after this point are part of the sample starter-algo
